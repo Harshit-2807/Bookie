@@ -2,7 +2,21 @@ const express=require('express')
 const app=express()
 const port=process.env.PORT || 5000
 const cors=require('cors')
-app.use(cors());
+const allowedOrigins = ["https://bookie-n0je.onrender.com/"];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+  },
+  methods: 'GET,POST,PUT,DELETE,HEAD,PATCH',
+  allowedHeaders: 'Content-Type',
+  credentials: true,
+  
+}));
 app.use(express.json())
 app.get('/',(req,res)=>{
     res.send("Hi readers")
