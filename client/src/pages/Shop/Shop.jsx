@@ -7,7 +7,7 @@ export default function Shop() {
   const [books, setBooks] = useState([]);
 // fetching data
   useEffect(() =>{
-    fetch('http://localhost:5000/all-books')
+    fetch('https://bookie-ji7o.onrender.com/all-books')
     .then(res => res.json())
     .then(data => setBooks(data))
   }, [loading]);
