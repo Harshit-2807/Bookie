@@ -7,7 +7,7 @@ export const Banner = () => {
             <div className='flex flex-col md:flex-row-reverse justify-between items-center gap-12 py-40'>
                 {/* right side */}
                 <div className='md:w-1/2 h-full'>
-                    <BannerCard />
+                    {/* <BannerCard /> */}
                 </div>
 
                 {/* left side */}
